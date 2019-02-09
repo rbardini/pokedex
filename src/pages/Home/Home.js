@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
+
 import styles from './Home.module.css';
 
 const Home = ({ isLoading, pokemons }) => (
@@ -10,7 +12,7 @@ const Home = ({ isLoading, pokemons }) => (
         {pokemons.map(({ name, sprite }) => (
           <div className={styles.cell} key={name}>
             <img src={sprite} alt={name} />
-            {name}
+            <Link to={`/${name}`}>{name}</Link>
           </div>
         ))}
       </div>
