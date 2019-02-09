@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Link } from 'react-router-dom'
 
 import usePokemons from '../../hooks/usePokemons';
@@ -11,6 +11,8 @@ const Home = () =>  {
   const filteredPokemons = pokemons.filter(({ formattedName }) =>
     !search || formattedName.toLowerCase().includes(search.toLowerCase()));
 
+  const onSearchChange = useCallback(e => setSearch(e.target.value), []);
+
   return (
     <div className={styles.home}>
       {isFetching ? (
@@ -20,7 +22,7 @@ const Home = () =>  {
           <input
             autoFocus
             className={styles.searchField}
-            onChange={(e => setSearch(e.target.value))} type="text" value={search}
+            onChange={onSearchChange} type="text" value={search}
             placeholder="Search for Pokémon"
           />
           <div className={styles.grid}>
