@@ -1,28 +1,16 @@
 import React from 'react';
-import logo from '../../assets/react.svg';
 import styles from './Home.module.css';
 
-const Home = () => (
+const Home = ({ pokemons }) => (
   <div className={styles.home}>
-    <div className={styles.header}>
-      <img src={logo} className={styles.logo} alt="logo" />
-      <h2>Welcome to Razzle</h2>
+    <div className={styles.grid}>
+      {pokemons.map(({ name, sprite }) => (
+        <div className={styles.cell} key={name}>
+          <img src={sprite} alt={name} />
+          {name}
+        </div>
+      ))}
     </div>
-    <p className={styles.intro}>
-      To get started, edit <code>src/App.js</code> or{' '}
-      <code>src/Home.js</code> and save to reload.
-    </p>
-    <ul className={styles.resources}>
-      <li>
-        <a href="https://github.com/jaredpalmer/razzle">Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/jaredpalmer/razzle/issues">Issues</a>
-      </li>
-      <li>
-        <a href="https://palmer.chat">Community Slack</a>
-      </li>
-    </ul>
   </div>
 );
 
