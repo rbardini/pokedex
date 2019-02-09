@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 import usePokemon from '../../hooks/usePokemon';
-import capitalize from '../../utils/capitalize';
 import styles from './Details.module.css';
 
 const Details = ({ match }) => {
@@ -17,7 +16,7 @@ const Details = ({ match }) => {
         <div>
           <img className={styles.sprite} src={pokemon.sprites.front_default} alt="" />
           <ul>
-            <li>Name: {capitalize(pokemon.name)}</li>
+            <li>Name: {pokemon.formattedName}</li>
             <li>Height: {pokemon.height / 10} m</li>
             <li>Weight: {pokemon.weight / 10} kg</li>
             <li>

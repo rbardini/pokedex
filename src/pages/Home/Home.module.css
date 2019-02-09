@@ -33,7 +33,7 @@
   background: #fff;
   box-shadow: 0 16px 64px rgba(0,0,0,.32); 
   transform: scale(1.2);
-  transition: transform .3s ease-out;
+  transition: all .3s ease-out;
 }
 
 .sprite {

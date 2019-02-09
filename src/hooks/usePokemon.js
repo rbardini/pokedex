@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 
+import formatName from '../utils/formatName';
 import request from '../utils/request';
 
 const usePokemon = name => {
@@ -7,7 +8,11 @@ const usePokemon = name => {
   const [isFetching, setIsFetching] = useState(true);
 
   const fetchPokemon = async () => {
-    const pokemon = await request(`pokemon/${name}`);
+    const result = await request(`pokemon/${name}`);
+    const pokemon = {
+      ...result,
+      formattedName: formatName(result.name),
+    }
 
     setPokemon(pokemon);
     setIsFetching(false);
