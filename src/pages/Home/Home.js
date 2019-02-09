@@ -10,7 +10,7 @@ const Home = () =>  {
   const [search, setSearch] = useState('');
 
   const filteredPokemons = pokemons.filter(({ name }) =>
-    !search || name.startsWith(search.toLowerCase()));
+    !search || name.includes(search.toLowerCase()));
 
   return (
     <div className={styles.home}>
