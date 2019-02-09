@@ -1,29 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom'
 
+import usePokemon from '../../hooks/usePokemon';
 import capitalize from '../../utils/capitalize';
-import request from '../../utils/request';
 
 const Details = ({ match }) => {
-  const { name } = match.params;
-  const [pokemon, setPokemon] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
-
-  const fetchPokemon = async () => {
-    const pokemon = await request(`pokemon/${name}`);
-
-    setPokemon(pokemon);
-    setIsLoading(false);
-  };
-
-  useEffect(() => {
-    fetchPokemon();
-  }, [name]);
+  const [pokemon, isFetching] = usePokemon(match.params.name);
 
   return (
     <div>
       <Link to="/">Back</Link>
-      {isLoading ? (
+      {isFetching ? (
         <span>Loading...</span>
       ) : (
         <div>
