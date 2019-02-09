@@ -6,6 +6,7 @@ import styles from './Home.module.css';
 const Home = () =>  {
   const [pokemons, setPokemons] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [search, setSearch] = useState('');
 
   const fetchPokemons = async () => {
     const response = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=151');
@@ -30,12 +31,15 @@ const Home = () =>  {
         <span>Loading...</span>
       ) : (
         <div className={styles.grid}>
-          {pokemons.map(({ name, sprite }) => (
-            <div className={styles.cell} key={name}>
-              <img src={sprite} alt={name} />
-              <Link to={`/${name}`}>{name}</Link>
-            </div>
-          ))}
+          <input onChange={(e => setSearch(e.target.value))} type="text" value={search} />
+          {pokemons
+            .filter(({ name }) => !search || name.startsWith(search.toLowerCase()))
+            .map(({ name, sprite }) => (
+              <div className={styles.cell} key={name}>
+                <img src={sprite} alt={name} />
+                <Link to={`/${name}`}>{name}</Link>
+              </div>
+            ))}
         </div>
       )}
     </div>
