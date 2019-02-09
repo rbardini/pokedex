@@ -10,3 +10,8 @@
 .cell {
   flex: 1;
 }
+
+.sprite {
+  width: 96px;
+  height: 96px;
+}

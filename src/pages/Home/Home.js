@@ -23,7 +23,7 @@ const Home = () =>  {
             {filteredPokemons.length === 0 ? 'No Pokémon found' : (
               filteredPokemons.map(({ name, sprite }) => (
                 <div className={styles.cell} key={name}>
-                  <img src={sprite} alt="" />
+                  <img className={styles.sprite} src={sprite} alt="" />
                   <Link to={`/${name}`}>{capitalize(name)}</Link>
                 </div>
               ))

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import usePokemon from '../../hooks/usePokemon';
 import capitalize from '../../utils/capitalize';
+import styles from './Details.module.css';
 
 const Details = ({ match }) => {
   const [pokemon, isFetching] = usePokemon(match.params.name);
@@ -14,7 +15,7 @@ const Details = ({ match }) => {
         <span>Loading...</span>
       ) : (
         <div>
-          <img src={pokemon.sprites.front_default} alt="" />
+          <img className={styles.sprite} src={pokemon.sprites.front_default} alt="" />
           <ul>
             <li>Name: {capitalize(pokemon.name)}</li>
             <li>Height: {pokemon.height / 10} m</li>
