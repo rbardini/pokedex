@@ -1,5 +1,5 @@
 .home {
-  text-align: center;
+  padding: 1em 2em;
 }
 
 .searchField {
@@ -7,8 +7,8 @@
   border: 0;
   border-bottom: 1px solid;
   font-size: 3em;
-  padding: .6em 0;
-  width: 96%;
+  padding: .2em 0;
+  width: 100%;
 }
 
 .searchField:focus {
@@ -23,23 +23,24 @@
 }
 
 .cell {
+  align-items: center;
   background: #fafafa;
-  flex: 0 0 128px;
-  height: 128px;
+  display: flex;
+  flex: 0 0 10em;
+  flex-direction: column;
+  height: 10em;
+  justify-content: center;
   margin: 2px;
 }
 
 .cell:hover {
   background: #fff;
-  box-shadow: 0 16px 64px rgba(0,0,0,.32); 
+  box-shadow: 0 16px 64px rgba(0,0,0,.32);
   transform: scale(1.2);
-  transition: all .3s ease-out;
+  transition: all .2s ease-out;
 }
 
 .sprite {
-  display: block;
   height: 96px;
-  margin: 0 auto;
-  text-align: center;
   width: 96px;
 }
