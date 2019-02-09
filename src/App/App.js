@@ -6,6 +6,7 @@ import './App.module.css';
 
 const App = () => {
   const [pokemons, setPokemons] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchPokemons = async () => {
     const response = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=151');
@@ -17,6 +18,7 @@ const App = () => {
     }));
 
     setPokemons(pokemons);
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -25,7 +27,7 @@ const App = () => {
 
   return (
     <Switch>
-      <Route exact path="/" component={() => <Home pokemons={pokemons} />} />
+      <Route exact path="/" component={() => <Home isLoading={isLoading} pokemons={pokemons} />} />
     </Switch>
   );
 }
