@@ -18,14 +18,19 @@ const Home = () =>  {
         <span>Loading...</span>
       ) : (
         <div>
-          <input onChange={(e => setSearch(e.target.value))} type="text" value={search} />
+          <input
+            autoFocus
+            className={styles.searchField}
+            onChange={(e => setSearch(e.target.value))} type="text" value={search}
+            placeholder="Search for Pokémon"
+          />
           <div className={styles.grid}>
             {filteredPokemons.length === 0 ? 'No Pokémon found' : (
               filteredPokemons.map(({ name, sprite }) => (
-                <div className={styles.cell} key={name}>
+                <Link className={styles.cell} key={name} to={`/${name}`}>
                   <img className={styles.sprite} src={sprite} alt="" />
-                  <Link to={`/${name}`}>{capitalize(name)}</Link>
-                </div>
+                  <span>{capitalize(name)}</span>
+                </Link>
               ))
             )}
           </div>
