@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 
+import capitalize from '../../utils/capitalize';
+import request from '../../utils/request';
+
 const Details = ({ match }) => {
   const { name } = match.params;
   const [pokemon, setPokemon] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchPokemon = async () => {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
-    const pokemon = await response.json();
+    const pokemon = await request(`pokemon/${name}`);
 
     setPokemon(pokemon);
     setIsLoading(false);
@@ -25,9 +27,9 @@ const Details = ({ match }) => {
         <span>Loading...</span>
       ) : (
         <div>
-          <img src={pokemon.sprites.front_default} alt={pokemon.name}/>
+          <img src={pokemon.sprites.front_default} alt="" />
           <ul>
-            <li>Name: {pokemon.name}</li>
+            <li>Name: {capitalize(pokemon.name)}</li>
             <li>Height: {pokemon.height / 10} m</li>
             <li>Weight: {pokemon.weight / 10} kg</li>
             <li>
