@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'
 
 const Details = ({ match }) => {
   const { name } = match.params;
@@ -19,6 +20,7 @@ const Details = ({ match }) => {
 
   return (
     <div>
+      <Link to="/">Back</Link>
       {isLoading ? (
         <span>Loading...</span>
       ) : (
