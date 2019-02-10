@@ -1,0 +1,8 @@
+.tag {
+  background: #e0e0e0;
+  display: inline-block;
+  font-size: .8em;
+  margin: 2px;
+  padding: .4em .6em;
+  text-transform: capitalize;
+}

@@ -12,6 +12,7 @@ const usePokemon = name => {
     const pokemon = {
       ...result,
       formattedName: formatName(result.name),
+      species: await request(`pokemon-species/${result.id}`)
     }
 
     setPokemon(pokemon);

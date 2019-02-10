@@ -2,11 +2,11 @@ import React from 'react';
 
 import styles from './Spinner.module.css';
 
-const Spinner = ({ className, width = 72, height = 72 }) => (
+const Spinner = ({ width = 72, height = 72 }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 100 100"
-    className={`${styles.spinner} ${className}`}
+    className={styles.spinner}
     width={width}
     height={height}
   >

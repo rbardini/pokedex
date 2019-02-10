@@ -1,0 +1,13 @@
+.statBar {
+  appearance: none;
+  border: none;
+  width: 100%;
+}
+
+.statBar::-webkit-progress-bar {
+  background-color: #e0e0e0;
+}
+
+.statBar::-webkit-progress-value {
+  background-color: #212121;
+}
