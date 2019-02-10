@@ -1,11 +1,12 @@
 import React, { useCallback, useState } from 'react';
-import { Link } from 'react-router-dom'
 
+import Grid from '../../components/Grid';
+import SearchField from '../../components/SearchField';
 import Spinner from '../../components/Spinner';
 import usePokemons from '../../hooks/usePokemons';
 import styles from './Home.module.css';
 
-const Home = () =>  {
+const Home = () => {
   const [pokemons, isFetching] = usePokemons();
   const [search, setSearch] = useState('');
 
@@ -20,22 +21,8 @@ const Home = () =>  {
         <Spinner className={styles.spinner} />
       ) : (
         <div>
-          <input
-            autoFocus
-            className={styles.searchField}
-            onChange={onSearchChange} type="text" value={search}
-            placeholder="Search for Pokémon"
-          />
-          <div className={styles.grid}>
-            {filteredPokemons.length === 0 ? 'No Pokémon found' : (
-              filteredPokemons.map(({ formattedName, name, sprite }) => (
-                <Link className={styles.cell} key={name} to={`/${name}`}>
-                  <img className={styles.sprite} src={sprite} alt="" />
-                  <span>{formattedName}</span>
-                </Link>
-              ))
-            )}
-          </div>
+          <SearchField onChange={onSearchChange} value={search} />
+          <Grid pokemons={filteredPokemons} />
         </div>
       )}
     </div>

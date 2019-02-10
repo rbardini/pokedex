@@ -1,0 +1,22 @@
+.cell {
+  align-items: center;
+  background: #fafafa;
+  display: flex;
+  flex: 0 0 10em;
+  flex-direction: column;
+  height: 10em;
+  justify-content: center;
+  margin: 2px;
+}
+
+.cell:hover {
+  background: #fff;
+  box-shadow: 0 16px 64px rgba(0,0,0,.32);
+  transform: scale(1.2);
+  transition: all .2s ease-out;
+}
+
+.sprite {
+  height: 96px;
+  width: 96px;
+}
