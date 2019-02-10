@@ -1,10 +1,6 @@
-.profileGrid {
+.grid {
   display: grid;
   grid-column-gap: .8em;
   grid-row-gap: 4px;
   grid-template-columns: 2fr 3fr 2fr 3fr;
-}
-
-.capitalize {
-  text-transform: capitalize;
 }

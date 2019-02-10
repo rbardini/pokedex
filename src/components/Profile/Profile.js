@@ -1,11 +1,12 @@
 import React from 'react';
 
+import { capitalize } from '../../styles/functional.module.css';
 import styles from './Profile.module.css';
 
 const Profile = ({ pokemon }) => (
   <section>
     <h2>Profile</h2>
-    <div className={styles.profileGrid}>
+    <div className={styles.grid}>
       <strong>Height</strong>
       <span>{pokemon.height / 10} m</span>
 
@@ -16,13 +17,13 @@ const Profile = ({ pokemon }) => (
       <span>{pokemon.base_experience}</span>
 
       <strong>Abilities</strong>
-      <span className={styles.capitalize}>{pokemon.abilities.map(({ ability }) => ability.name).join(', ')}</span>
+      <span className={capitalize}>{pokemon.abilities.map(({ ability }) => ability.name).join(', ')}</span>
 
       <strong>Hatch steps</strong>
       <span>{pokemon.species.hatch_counter * 255}</span>
 
       <strong>Egg groups</strong>
-      <span className={styles.capitalize}>{pokemon.species.egg_groups.map(({ name }) => name).join(', ')}</span>
+      <span className={capitalize}>{pokemon.species.egg_groups.map(({ name }) => name).join(', ')}</span>
 
       <strong>Catch rate</strong>
       <span>{(pokemon.species.capture_rate / 255 * 100).toFixed(1)}%</span>
@@ -31,10 +32,10 @@ const Profile = ({ pokemon }) => (
       <span>{(pokemon.species.base_happiness / 255 * 100).toFixed(1)}%</span>
 
       <strong>Growth rate</strong>
-      <span className={styles.capitalize}>{pokemon.species.growth_rate.name}</span>
+      <span className={capitalize}>{pokemon.species.growth_rate.name}</span>
 
       <strong>Habitat</strong>
-      <span className={styles.capitalize}>{pokemon.species.habitat.name}</span>
+      <span className={capitalize}>{pokemon.species.habitat.name}</span>
     </div>
   </section>
 );
