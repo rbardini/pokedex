@@ -4,7 +4,7 @@ import Switch from 'react-router-dom/Switch';
 
 import Home from '../pages/Home';
 import Details from '../pages/Details';
-import './App.module.css';
+import './App.css';
 
 const App = () => (
   <Switch>
