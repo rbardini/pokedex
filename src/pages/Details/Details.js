@@ -10,14 +10,18 @@ import usePokemon from '../../hooks/usePokemon';
 import styles from './Details.module.css';
 
 const Details = ({ match }) => {
-  const { pokemon, isFetching } = usePokemon(match.params.name);
+  const { pokemon, isFetching, error } = usePokemon(match.params.name);
 
   return (
     <Fragment>
       <Link className={styles.back} to="/">←</Link>
-      {isFetching ? (
+      {isFetching && (
         <Spinner />
-      ) : (
+      )}
+      {error && (
+        <p className={styles.error}>This Pokémon has fled!</p>
+      )}
+      {pokemon && (
         <div className={styles.grid}>
           <span className={styles.number}>#{pokemon.id}</span>
           <Header className={styles.header} pokemon={pokemon} />

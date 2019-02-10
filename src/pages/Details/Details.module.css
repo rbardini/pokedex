@@ -2,6 +2,11 @@
   font-size: 3em;
 }
 
+.error {
+  color: #b71c1c;
+  text-align: center;
+}
+
 .grid {
   display: grid;
   grid-column-gap: .8em;
