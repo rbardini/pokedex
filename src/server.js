@@ -1,27 +1,27 @@
-import App from './App';
-import React from 'react';
-import { StaticRouter } from 'react-router-dom';
 import express from 'express';
+import React from 'react';
 import { renderToStaticNodeStream } from 'react-dom/server';
+import { StaticRouter } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+
+import App from './App';
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 
-const HTML = ({ assets, children }) => (
-  <html lang="en">
+const HTML = ({ assets, children, helmet }) => (
+  <html {...helmet.htmlAttributes.toComponent()}>
     <head>
-      <meta charSet="utf-8" />
-      <title>Pokédex</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      {assets.client.css
-        ? <link rel="stylesheet" href={assets.client.css} />
-        : ''
-      }
+      {helmet.meta.toComponent()}
+      {helmet.title.toComponent()}
+      {assets.client.css && (
+        <link rel="stylesheet" href={assets.client.css} />
+      )}
       {process.env.NODE_ENV === 'production'
         ? <script src={assets.client.js} defer></script>
         : <script src={assets.client.js} defer crossOrigin="true"></script>
       }
     </head>
-    <body>
+    <body {...helmet.bodyAttributes.toComponent()}>
       <div id="root">{children}</div>
     </body>
   </html>
@@ -34,7 +34,7 @@ server
   .get('/*', (req, res) => {
     const context = {};
     const stream = renderToStaticNodeStream(
-      <HTML assets={assets}>
+      <HTML assets={assets} helmet={Helmet.rewind()}>
         <StaticRouter context={context} location={req.url}>
           <App />
         </StaticRouter>

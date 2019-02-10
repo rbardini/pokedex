@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom'
 
 import Figure from '../../components/Figure';
@@ -23,6 +24,9 @@ const Details = ({ match }) => {
       )}
       {pokemon && (
         <div className={styles.grid}>
+          <Helmet>
+            <title>{pokemon.formattedName}</title>
+          </Helmet>
           <span className={styles.number}>#{pokemon.id}</span>
           <Header className={styles.header} pokemon={pokemon} />
           <Figure className={styles.figure} pokemon={pokemon} />
