@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { Link } from 'react-router-dom'
 
+import Spinner from '../../components/Spinner';
 import usePokemons from '../../hooks/usePokemons';
 import styles from './Home.module.css';
 
@@ -16,7 +17,7 @@ const Home = () =>  {
   return (
     <div className={styles.home}>
       {isFetching ? (
-        <span>Loading...</span>
+        <Spinner className={styles.spinner} />
       ) : (
         <div>
           <input

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
+import Spinner from '../../components/Spinner';
 import usePokemon from '../../hooks/usePokemon';
 import styles from './Details.module.css';
 
@@ -11,7 +12,7 @@ const Details = ({ match }) => {
     <div>
       <Link to="/">Back</Link>
       {isFetching ? (
-        <span>Loading...</span>
+        <Spinner className={styles.spinner} />
       ) : (
         <div>
           <img className={styles.sprite} src={pokemon.sprites.front_default} alt="" />
