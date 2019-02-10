@@ -6,7 +6,7 @@ import Spinner from '../../components/Spinner';
 import usePokemons from '../../hooks/usePokemons';
 
 const Home = () => {
-  const [pokemons, isFetching] = usePokemons();
+  const { pokemons, isFetching } = usePokemons();
   const [search, setSearch] = useState('');
 
   const filteredPokemons = pokemons.filter(({ formattedName }) =>

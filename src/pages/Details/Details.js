@@ -10,7 +10,7 @@ import usePokemon from '../../hooks/usePokemon';
 import styles from './Details.module.css';
 
 const Details = ({ match }) => {
-  const [pokemon, isFetching] = usePokemon(match.params.name);
+  const { pokemon, isFetching } = usePokemon(match.params.name);
 
   return (
     <Fragment>
