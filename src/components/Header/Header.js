@@ -4,8 +4,8 @@ import Stats from '../../components/Stats';
 import getEnglishEntry from '../../utils/getEnglishEntry';
 import styles from './Header.module.css';
 
-const Header = ({ pokemon }) => (
-  <header className={styles.header}>
+const Header = ({ className, pokemon }) => (
+  <header className={className}>
     <h1 className={styles.title}>
       {pokemon.formattedName}
     </h1>

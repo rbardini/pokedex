@@ -20,6 +20,14 @@
   grid-area: number;
 }
 
+.header {
+  grid-area: header;
+}
+
+.figure {
+  grid-area: figure;
+}
+
 .content {
   grid-area: content;
 }

@@ -20,8 +20,8 @@ const Details = ({ match }) => {
       ) : (
         <div className={styles.grid}>
           <span className={styles.number}>#{pokemon.id}</span>
-          <Header pokemon={pokemon} />
-          <Figure pokemon={pokemon} />
+          <Header className={styles.header} pokemon={pokemon} />
+          <Figure className={styles.figure} pokemon={pokemon} />
           <div className={styles.content}>
             <Profile pokemon={pokemon} />
             <Moves pokemon={pokemon} />

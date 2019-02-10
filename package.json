@@ -9,6 +9,7 @@
     "start:prod": "NODE_ENV=production node build/server.js"
   },
   "dependencies": {
+    "classnames": "2.2.6",
     "express": "4.16.4",
     "razzle": "2.4.1",
     "react": "16.8.1",
