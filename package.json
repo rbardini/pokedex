@@ -1,13 +1,33 @@
 {
   "name": "pokedex",
   "version": "0.1.0",
-  "license": "MIT",
+  "description": "A server-rendered universal JavaScript application for Pokémon trainers",
+  "author": "Rafael Bardini",
+  "homepage": "https://github.com/rbardini/pokedex",
+  "keywords": [
+    "pokemon",
+    "pokedex",
+    "encyclopedia",
+    "index",
+    "pokeapi"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
   "scripts": {
     "start": "razzle start",
     "build": "razzle build",
     "test": "razzle test --env=jsdom",
     "start:prod": "NODE_ENV=production node build/server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rbardini/pokedex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rbardini/pokedex/issues"
+  },
+  "license": "MIT",
   "dependencies": {
     "classnames": "2.2.6",
     "express": "4.16.4",
