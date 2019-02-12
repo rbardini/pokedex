@@ -10,7 +10,7 @@ const usePokemons = () => {
 
   const fetchPokemons = async (signal) => {
     try {
-      const { results } = await request('pokemon/?limit=151', { signal });
+      const { results } = await request('pokemon/?limit=807', { signal });
       const pokemons = results.map((pokemon, i) => ({
         ...pokemon,
         formattedName: formatName(pokemon.name),
