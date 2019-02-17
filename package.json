@@ -19,8 +19,7 @@
     "build": "razzle build",
     "test": "razzle test --env=jsdom",
     "prestart:prod": "npm run build",
-    "start:prod": "NODE_ENV=production node build/server.js",
-    "deploy": "git push heroku master"
+    "start:prod": "NODE_ENV=production node build/server.js"
   },
   "repository": {
     "type": "git",
