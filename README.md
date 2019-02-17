@@ -1,5 +1,7 @@
 # Pokédex
 
+[![Build status](https://img.shields.io/travis/rbardini/pokedex.svg)](https://travis-ci.org/rbardini/pokedex)
+[![Code coverage](https://img.shields.io/codecov/c/github/rbardini/pokedex.svg)](https://codecov.io/gh/rbardini/pokedex)
 [![Dependencies status](https://img.shields.io/david/rbardini/pokedex.svg)](https://david-dm.org/rbardini/pokedex)
 [![devDependencies status](https://img.shields.io/david/dev/rbardini/pokedex.svg)](https://david-dm.org/rbardini/pokedex?type=dev)
 
@@ -13,7 +15,16 @@ https://rbardini-pokedex.herokuapp.com
 
 ## Quick Start
 
-Below is a list of commands you will probably find useful.
+```bash
+git clone https://github.com/rbardini/pokedex.git
+cd pokedex
+npm install
+npm start
+```
+
+Then open http://localhost:3000/ to see the app.
+
+Below is a list of commands you will probably find useful:
 
 - `npm start` runs the project in development mode.
 - `npm run build` builds the app for production to the `build` folder.
