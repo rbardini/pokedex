@@ -19,8 +19,10 @@
     "build": "razzle build",
     "test": "razzle test --env=jsdom",
     "prestart:prod": "npm run build",
+    "heroku-postbuild": "echo Skip build on Heroku",
     "start:prod": "NODE_ENV=production node build/server.js"
   },
+  "heroku-run-build-script": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/rbardini/pokedex.git"
