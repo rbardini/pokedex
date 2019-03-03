@@ -35,13 +35,13 @@
     "classnames": "2.2.6",
     "express": "4.16.4",
     "razzle": "2.4.1",
-    "react": "16.8.1",
-    "react-dom": "16.8.1",
+    "react": "16.8.3",
+    "react-dom": "16.8.3",
     "react-helmet": "6.0.0-beta",
     "react-router-dom": "4.3.1"
   },
   "devDependencies": {
     "prettier": "1.16.4",
-    "react-testing-library": "5.8.0"
+    "react-testing-library": "6.0.0"
   }
 }
