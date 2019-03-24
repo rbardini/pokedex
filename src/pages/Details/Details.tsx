@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
+import React, { FC, Fragment } from 'react';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom'
+import { Link, RouteComponentProps } from 'react-router-dom'
 
 import Figure from '../../components/Figure';
 import Header from '../../components/Header';
@@ -10,7 +10,11 @@ import Spinner from '../../components/Spinner';
 import usePokemon from '../../hooks/usePokemon';
 import styles from './Details.module.css';
 
-const Details = ({ match }) => {
+type Params = {
+  name: string;
+};
+
+const Details: FC<RouteComponentProps<Params>> = ({ match }) => {
   const { pokemon, isFetching, error } = usePokemon(match.params.name);
 
   return (

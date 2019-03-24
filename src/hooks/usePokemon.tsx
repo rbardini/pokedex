@@ -1,20 +1,28 @@
 import { useState, useEffect } from 'react';
 
+import { Pokemon } from '../types/Pokemon';
+import { Species } from '../types/Species';
 import formatName from '../utils/formatName';
 import request from '../utils/request';
 
-const usePokemon = name => {
-  const [pokemon, setPokemon] = useState(null);
-  const [isFetching, setIsFetching] = useState(true);
-  const [error, setError] = useState(null);
+export interface PokemonItem extends Pick<Pokemon, Exclude<keyof Pokemon, 'species'>> {
+  formattedName: string;
+  species: Species;
+}
 
-  const fetchPokemon = async (signal) => {
+const usePokemon = (name: string) => {
+  const [pokemon, setPokemon] = useState<PokemonItem>();
+  const [isFetching, setIsFetching] = useState(true);
+  const [error, setError] = useState<Error>();
+
+  const fetchPokemon = async (signal: AbortSignal) => {
     try {
-      const result = await request(`pokemon/${name}`, { signal });
+      const result: Pokemon = await request(`pokemon/${name}`, { signal });
+      const species: Species = await request(result.species.url, { signal });
       const pokemon = {
         ...result,
         formattedName: formatName(result.name),
-        species: await request(`pokemon-species/${result.id}`, { signal }),
+        species,
       }
 
       setPokemon(pokemon);

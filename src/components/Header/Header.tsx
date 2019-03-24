@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import Stats from '../../components/Stats';
+import { PokemonItem } from '../../hooks/usePokemon';
 import getEnglishEntry from '../../utils/getEnglishEntry';
 import styles from './Header.module.css';
 
-const Header = ({ className, pokemon }) => (
+type Props = {
+  className: string;
+  pokemon: PokemonItem;
+};
+
+const Header: FC<Props> = ({ className, pokemon }) => (
   <header className={className}>
     <h1 className={styles.title}>
       {pokemon.formattedName}

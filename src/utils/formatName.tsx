@@ -1,4 +1,4 @@
-const formatName = name => (
+const formatName = (name: string) => (
   name.split('-')
     .map(str => str.charAt(0).toUpperCase() + str.substring(1))
     .map(str => str === 'M' ? '♂' : str)

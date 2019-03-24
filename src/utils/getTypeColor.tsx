@@ -19,6 +19,6 @@ const COLOR_MAP = {
   flying: '#a890f0'
 }
 
-const getTypeColor = color => COLOR_MAP[color];
+const getTypeColor = (color: string) => COLOR_MAP[color];
 
 export default getTypeColor;

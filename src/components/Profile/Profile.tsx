@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { FC } from 'react';
 
+import { PokemonItem } from '../../hooks/usePokemon';
 import { capitalize } from '../../styles/functional.module.css';
 import styles from './Profile.module.css';
 
-const Profile = ({ pokemon }) => (
+type Props = {
+  pokemon: PokemonItem;
+};
+
+const Profile: FC<Props> = ({ pokemon }) => (
   <section>
     <h2>Profile</h2>
     <div className={styles.grid}>

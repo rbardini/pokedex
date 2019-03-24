@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import { Helmet } from "react-helmet";
-import Route from 'react-router-dom/Route';
-import Switch from 'react-router-dom/Switch';
+import { Route, Switch } from 'react-router-dom';
 
 import Home from '../pages/Home';
 import Details from '../pages/Details';

@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import styles from './StatBar.module.css';
 
-const StatBar = ({ value }) => (
+type Props = {
+  value: number;
+};
+
+const StatBar: FC<Props> = ({ value }) => (
   <progress className={styles.statBar} max="255" value={value}></progress>
 );
 

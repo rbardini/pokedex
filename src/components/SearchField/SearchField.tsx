@@ -1,8 +1,13 @@
-import React, { useCallback } from 'react';
+import React, { FC, useCallback } from 'react';
 
 import styles from './SearchField.module.css';
 
-const SearchField = ({ onChange, value }) => {
+type Props = {
+  onChange: (value: string) => void;
+  value: string;
+};
+
+const SearchField: FC<Props> = ({ onChange, value }) => {
   const handleChange = useCallback(e => onChange(e.target.value), []);
 
   return (

@@ -25,7 +25,7 @@ describe('<SearchField />', () => {
       <SearchField onChange={onChange} value="pikachu" />,
     );
 
-    fireEvent.change(container.firstChild, {
+    fireEvent.change(container.firstChild as Element, {
       target: { value: 'charmander' },
     });
 

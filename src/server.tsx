@@ -1,14 +1,25 @@
 import express from 'express';
-import React from 'react';
+import React, { FC } from 'react';
 import { renderToStaticNodeStream } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetData } from 'react-helmet';
 
 import App from './App';
+import { StaticRouterContext } from 'react-router';
 
-const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
+const assets = require(process.env.RAZZLE_ASSETS_MANIFEST!);
 
-const HTML = ({ assets, children, helmet }) => (
+type Props = {
+  assets: {
+    client: {
+      css: string;
+      js: string;
+    }
+  },
+  helmet: HelmetData;
+}
+
+const HTML: FC<Props> = ({ assets, children, helmet }) => (
   <html {...helmet.htmlAttributes.toComponent()}>
     <head>
       {helmet.meta.toComponent()}
@@ -30,9 +41,9 @@ const HTML = ({ assets, children, helmet }) => (
 const server = express();
 server
   .disable('x-powered-by')
-  .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
+  .use(express.static(process.env.RAZZLE_PUBLIC_DIR!))
   .get('/*', (req, res) => {
-    const context = {};
+    const context: StaticRouterContext = {};
     const stream = renderToStaticNodeStream(
       <HTML assets={assets} helmet={Helmet.rewind()}>
         <StaticRouter context={context} location={req.url}>

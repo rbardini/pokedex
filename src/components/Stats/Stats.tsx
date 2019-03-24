@@ -1,10 +1,15 @@
-import React, { Fragment } from 'react';
+import React, { FC, Fragment } from 'react';
 
+import { PokemonItem } from '../../hooks/usePokemon';
 import { capitalize } from '../../styles/functional.module.css';
 import StatBar from '../StatBar';
 import styles from './Stats.module.css';
 
-const Stats = ({ pokemon }) => (
+type Props = {
+  pokemon: PokemonItem;
+};
+
+const Stats: FC<Props> = ({ pokemon }) => (
   <div className={styles.stats}>
     {pokemon.stats.map(({ base_stat, stat }) => (
       <Fragment key={stat.name}>

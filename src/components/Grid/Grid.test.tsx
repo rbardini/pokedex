@@ -1,5 +1,5 @@
 import React from 'react';
-import MemoryRouter from 'react-router-dom/MemoryRouter';
+import { MemoryRouter } from 'react-router-dom';
 import { render } from 'react-testing-library';
 
 import Grid from '.';
@@ -10,9 +10,24 @@ describe('<Grid />', () => {
       <MemoryRouter>
         <Grid
           pokemons={[
-            { name: 'bulbasaur', sprite: '1.png' },
-            { name: 'charmander', sprite: '2.png' },
-            { name: 'squirtle', sprite: '3.png' },
+            {
+              formattedName: 'Bulbasaur',
+              name: 'bulbasaur',
+              sprite: '1.png',
+              url: 'https://pokeapi.co/1',
+            },
+            {
+              formattedName: 'Charmander',
+              name: 'charmander',
+              sprite: '2.png',
+              url: 'https://pokeapi.co/2',
+            },
+            {
+              formattedName: 'Squirtle',
+              name: 'squirtle',
+              sprite: '3.png',
+              url: 'https://pokeapi.co/3',
+            },
           ]}
         />
       </MemoryRouter>,
@@ -27,7 +42,9 @@ describe('<Grid />', () => {
       alt=""
       src="1.png"
     />
-    <span />
+    <span>
+      Bulbasaur
+    </span>
   </a>
   <a
     href="/charmander"
@@ -36,7 +53,9 @@ describe('<Grid />', () => {
       alt=""
       src="2.png"
     />
-    <span />
+    <span>
+      Charmander
+    </span>
   </a>
   <a
     href="/squirtle"
@@ -45,7 +64,9 @@ describe('<Grid />', () => {
       alt=""
       src="3.png"
     />
-    <span />
+    <span>
+      Squirtle
+    </span>
   </a>
 </div>
 `);
