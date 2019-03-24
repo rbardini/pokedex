@@ -17,7 +17,7 @@ const usePokemon = (name: string) => {
 
   const fetchPokemon = async (signal: AbortSignal) => {
     try {
-      const result: Pokemon = await request(`pokemon/${name}`, { signal });
+      const result: Pokemon = await request(`https://pokeapi.co/api/v2/pokemon/${name}`, { signal });
       const species: Species = await request(result.species.url, { signal });
       const pokemon = {
         ...result,
