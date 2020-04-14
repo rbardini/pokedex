@@ -16,12 +16,20 @@ const usePokemons = () => {
 
   const fetchPokemons = async (signal: AbortSignal) => {
     try {
-      const { results }: { results: NamedAPIResource[] } = await request('https://pokeapi.co/api/v2/pokemon/?limit=151', { signal });
+      const {
+        results,
+      }: {
+        results: NamedAPIResource[];
+      } = await request('https://pokeapi.co/api/v2/pokemon/?limit=151', {
+        signal,
+      });
       const pokemons = results.map((pokemon: NamedAPIResource, i: number) => ({
         ...pokemon,
         // Workaround to add formatted name and sprite URL without making extra requests per Pokémon
         formattedName: formatName(pokemon.name),
-        sprite: `//raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i + 1}.png`,
+        sprite: `//raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+          i + 1
+        }.png`,
       }));
 
       setPokemons(pokemons);
@@ -44,6 +52,6 @@ const usePokemons = () => {
   }, []);
 
   return { pokemons, isFetching, error };
-}
+};
 
 export default usePokemons;

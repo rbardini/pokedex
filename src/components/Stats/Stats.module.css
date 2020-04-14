@@ -1,6 +1,6 @@
 .stats {
   display: grid;
-  grid-column-gap: .8em;
+  grid-column-gap: 0.8em;
   grid-row-gap: 2px;
   grid-template-columns: auto 1fr auto;
 }

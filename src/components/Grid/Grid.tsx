@@ -12,8 +12,7 @@ const Grid: FC<Props> = ({ pokemons }) => (
   <div className={styles.grid}>
     {pokemons.length > 0
       ? pokemons.map(pokemon => <Cell key={pokemon.name} pokemon={pokemon} />)
-      : 'No Pokémon found'
-    }
+      : 'No Pokémon found'}
   </div>
 );
 

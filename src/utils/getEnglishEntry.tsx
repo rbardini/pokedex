@@ -4,8 +4,7 @@ type Entry = {
   };
 };
 
-const getEnglishEntry: <T extends Entry>(entries: T[]) => T = entries => (
-  entries.find(({ language }) => language.name === 'en')!
-);
+const getEnglishEntry: <T extends Entry>(entries: T[]) => T = entries =>
+  entries.find(({ language }) => language.name === 'en')!;
 
 export default getEnglishEntry;

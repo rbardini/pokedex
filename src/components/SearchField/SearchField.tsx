@@ -20,6 +20,6 @@ const SearchField: FC<Props> = ({ onChange, value }) => {
       value={value}
     />
   );
-}
+};
 
 export default SearchField;

@@ -16,7 +16,12 @@ const Figure: FC<Props> = ({ className, pokemon }) => (
     <img className={styles.sprite} src={pokemon.sprites.front_default} alt="" />
     <figcaption>
       {pokemon.types.map(({ type }) => (
-        <Tag key={type.name} style={{ backgroundColor: getTypeColor(type.name), color: '#fff' }}>{type.name}</Tag>
+        <Tag
+          key={type.name}
+          style={{ backgroundColor: getTypeColor(type.name), color: '#fff' }}
+        >
+          {type.name}
+        </Tag>
       ))}
     </figcaption>
   </figure>

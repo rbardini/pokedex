@@ -12,9 +12,7 @@ type Props = {
 
 const Header: FC<Props> = ({ className, pokemon }) => (
   <header className={className}>
-    <h1 className={styles.title}>
-      {pokemon.formattedName}
-    </h1>
+    <h1 className={styles.title}>{pokemon.formattedName}</h1>
     <h2>{getEnglishEntry(pokemon.species.genera).genus}</h2>
     <p>{getEnglishEntry(pokemon.species.flavor_text_entries).flavor_text}</p>
     <Stats pokemon={pokemon} />

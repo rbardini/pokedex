@@ -5,7 +5,8 @@ import { Species } from '../types/Species';
 import formatName from '../utils/formatName';
 import request from '../utils/request';
 
-export interface PokemonItem extends Pick<Pokemon, Exclude<keyof Pokemon, 'species'>> {
+export interface PokemonItem
+  extends Pick<Pokemon, Exclude<keyof Pokemon, 'species'>> {
   formattedName: string;
   species: Species;
 }
@@ -17,13 +18,16 @@ const usePokemon = (name: string) => {
 
   const fetchPokemon = async (signal: AbortSignal) => {
     try {
-      const result: Pokemon = await request(`https://pokeapi.co/api/v2/pokemon/${name}`, { signal });
+      const result: Pokemon = await request(
+        `https://pokeapi.co/api/v2/pokemon/${name}`,
+        { signal },
+      );
       const species: Species = await request(result.species.url, { signal });
       const pokemon = {
         ...result,
         formattedName: formatName(result.name),
         species,
-      }
+      };
 
       setPokemon(pokemon);
     } catch (err) {
@@ -45,6 +49,6 @@ const usePokemon = (name: string) => {
   }, [name]);
 
   return { pokemon, isFetching, error };
-}
+};
 
 export default usePokemon;

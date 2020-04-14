@@ -10,7 +10,9 @@ type Props = {
 const Moves: FC<Props> = ({ pokemon }) => (
   <section>
     <h2>Moves</h2>
-    {pokemon.moves.map(({ move }) => <Tag key={move.name}>{move.name}</Tag>)}
+    {pokemon.moves.map(({ move }) => (
+      <Tag key={move.name}>{move.name}</Tag>
+    ))}
   </section>
 );
 

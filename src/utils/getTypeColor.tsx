@@ -16,8 +16,8 @@ const COLOR_MAP = {
   steel: '#b8b8d0',
   psychic: '#f85888',
   ice: '#98d8d8',
-  flying: '#a890f0'
-}
+  flying: '#a890f0',
+};
 
 const getTypeColor = (color: string) => COLOR_MAP[color];
 

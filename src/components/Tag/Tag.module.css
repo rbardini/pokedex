@@ -1,8 +1,8 @@
 .tag {
   background: #e0e0e0;
   display: inline-block;
-  font-size: .8em;
+  font-size: 0.8em;
   margin: 2px;
-  padding: .4em .6em;
+  padding: 0.4em 0.6em;
   text-transform: capitalize;
 }

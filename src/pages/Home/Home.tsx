@@ -10,17 +10,15 @@ const Home = () => {
   const { pokemons, isFetching, error } = usePokemons();
   const [search, setSearch] = useState('');
 
-  const filteredPokemons = pokemons.filter(({ formattedName }) =>
-    !search || formattedName.toLowerCase().includes(search.toLowerCase()));
+  const filteredPokemons = pokemons.filter(
+    ({ formattedName }) =>
+      !search || formattedName.toLowerCase().includes(search.toLowerCase()),
+  );
 
   return (
     <Fragment>
-      {isFetching && (
-        <Spinner />
-      )}
-      {error && (
-        <p className={styles.error}>No Pokémons in this village!</p>
-      )}
+      {isFetching && <Spinner />}
+      {error && <p className={styles.error}>No Pokémons in this village!</p>}
       {pokemons.length > 0 && (
         <Fragment>
           <SearchField onChange={setSearch} value={search} />
@@ -29,6 +27,6 @@ const Home = () => {
       )}
     </Fragment>
   );
-}
+};
 
 export default Home;

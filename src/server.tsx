@@ -14,23 +14,22 @@ type Props = {
     client: {
       css: string;
       js: string;
-    }
-  },
+    };
+  };
   helmet: HelmetData;
-}
+};
 
 const HTML: FC<Props> = ({ assets, children, helmet }) => (
   <html {...helmet.htmlAttributes.toComponent()}>
     <head>
       {helmet.meta.toComponent()}
       {helmet.title.toComponent()}
-      {assets.client.css && (
-        <link rel="stylesheet" href={assets.client.css} />
+      {assets.client.css && <link rel="stylesheet" href={assets.client.css} />}
+      {process.env.NODE_ENV === 'production' ? (
+        <script src={assets.client.js} defer></script>
+      ) : (
+        <script src={assets.client.js} defer crossOrigin="true"></script>
       )}
-      {process.env.NODE_ENV === 'production'
-        ? <script src={assets.client.js} defer></script>
-        : <script src={assets.client.js} defer crossOrigin="true"></script>
-      }
     </head>
     <body {...helmet.bodyAttributes.toComponent()}>
       <div id="root">{children}</div>
@@ -49,13 +48,13 @@ server
         <StaticRouter context={context} location={req.url}>
           <App />
         </StaticRouter>
-      </HTML>
+      </HTML>,
     );
 
     if (context.url) {
       res.redirect(context.url);
     } else {
-      res.setHeader('Content-Type', 'text/html; charset=utf-8')
+      res.setHeader('Content-Type', 'text/html; charset=utf-8');
       res.write('<!DOCTYPE html>');
       stream.pipe(res);
     }

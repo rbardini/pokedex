@@ -1,6 +1,6 @@
 import React, { FC, Fragment } from 'react';
 import { Helmet } from 'react-helmet';
-import { Link, RouteComponentProps } from 'react-router-dom'
+import { Link, RouteComponentProps } from 'react-router-dom';
 
 import Figure from '../../components/Figure';
 import Header from '../../components/Header';
@@ -19,13 +19,11 @@ const Details: FC<RouteComponentProps<Params>> = ({ match }) => {
 
   return (
     <Fragment>
-      <Link className={styles.back} to="/">←</Link>
-      {isFetching && (
-        <Spinner />
-      )}
-      {error && (
-        <p className={styles.error}>This Pokémon has fled!</p>
-      )}
+      <Link className={styles.back} to="/">
+        ←
+      </Link>
+      {isFetching && <Spinner />}
+      {error && <p className={styles.error}>This Pokémon has fled!</p>}
       {pokemon && (
         <div className={styles.grid}>
           <Helmet>
@@ -42,6 +40,6 @@ const Details: FC<RouteComponentProps<Params>> = ({ match }) => {
       )}
     </Fragment>
   );
-}
+};
 
 export default Details;

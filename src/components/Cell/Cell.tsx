@@ -1,5 +1,5 @@
 import React, { FC, memo } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 import { PokemonListItem } from '../../hooks/usePokemons';
 import styles from './Cell.module.css';
