@@ -35,27 +35,27 @@
   "dependencies": {
     "classnames": "2.2.6",
     "express": "4.17.1",
-    "razzle": "3.0.0",
+    "razzle": "3.1.6",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-helmet": "6.0.0",
-    "react-router-dom": "5.1.2"
+    "react-helmet": "6.1.0",
+    "react-router-dom": "5.2.0"
   },
   "devDependencies": {
-    "@testing-library/react": "10.0.2",
+    "@testing-library/react": "10.4.9",
     "@types/classnames": "2.2.10",
-    "@types/express": "4.17.6",
-    "@types/jest": "25.2.1",
-    "@types/react": "16.9.34",
-    "@types/react-dom": "16.9.6",
-    "@types/react-helmet": "5.0.15",
-    "@types/react-router-dom": "5.1.4",
-    "@types/webpack-env": "1.15.1",
-    "jest": "25.3.0",
-    "prettier": "2.0.4",
-    "razzle-plugin-typescript": "3.0.0",
-    "ts-jest": "25.3.1",
-    "typescript": "3.8.3"
+    "@types/express": "4.17.7",
+    "@types/jest": "26.0.10",
+    "@types/react": "16.9.46",
+    "@types/react-dom": "16.9.8",
+    "@types/react-helmet": "6.1.0",
+    "@types/react-router-dom": "5.1.5",
+    "@types/webpack-env": "1.15.2",
+    "jest": "26.4.2",
+    "prettier": "2.0.5",
+    "razzle-plugin-typescript": "3.1.6",
+    "ts-jest": "26.2.0",
+    "typescript": "4.0.2"
   },
   "jest": {
     "transform": {
