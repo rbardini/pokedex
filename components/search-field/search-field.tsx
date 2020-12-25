@@ -11,7 +11,6 @@ const SearchField = ({ onChange, value }: Props) => {
 
   return (
     <input
-      autoFocus
       className={styles.searchField}
       onChange={handleChange}
       placeholder="Search for Pokémon"
