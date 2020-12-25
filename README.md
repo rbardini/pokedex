@@ -1,6 +1,7 @@
-# Pokédex
+# [Pokédex](https://next-pokedex.netlify.app/)
 
-[![Build status](https://img.shields.io/travis/rbardini/pokedex.svg)](https://travis-ci.org/rbardini/pokedex)
+[![Build status](https://img.shields.io/github/workflow/status/rbardini/pokedex/Main)](https://github.com/rbardini/pokedex/actions)
+[![Deploy status](https://img.shields.io/netlify/5b93c47b-d35a-43fc-ba21-71e5c997d726?label=deploy)](https://app.netlify.com/sites/next-pokedex/deploys)
 [![Code coverage](https://img.shields.io/codecov/c/github/rbardini/pokedex.svg)](https://codecov.io/gh/rbardini/pokedex)
 [![Dependencies status](https://img.shields.io/david/rbardini/pokedex.svg)](https://david-dm.org/rbardini/pokedex)
 [![devDependencies status](https://img.shields.io/david/dev/rbardini/pokedex.svg)](https://david-dm.org/rbardini/pokedex?type=dev)
