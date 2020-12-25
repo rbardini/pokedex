@@ -1,0 +1,5 @@
+{
+  "collectCoverageFrom": ["**/*.tsx"],
+  "moduleNameMapper": { "\\.css$": "identity-obj-proxy" },
+  "testPathIgnorePatterns": ["/node_modules/", "/.next/"]
+}

@@ -7,34 +7,28 @@
 
 🎒 A server-rendered universal JavaScript application for Pokémon trainers.
 
-Powered by [Razzle](https://github.com/jaredpalmer/razzle) and [PokéAPI](https://pokeapi.co/).
+Powered by [Next.js](https://nextjs.org/) and [PokéAPI](https://pokeapi.co/).
 
-## Demo
+## Technologies
 
-https://rbardini-pokedex.herokuapp.com
+- ⚛️ [React](https://reactjs.org/) for UI building
+- 🤖 [TypeScript](https://www.typescriptlang.org/) for type-checking
+- ⚠️ [ESLint](https://eslint.org/) for linting
+- 💄 [Prettier](https://prettier.io/) for formatting
+- 🐶 [Husky](https://typicode.github.io/husky) and [lint-staged](https://github.com/okonet/lint-staged) for commit hooks
+- 🧪 [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/react) for testing
+- 🌐 [Codecov](https://codecov.io/) for code coverage
+- 🎬 [Framer Motion](https://www.framer.com/motion/) for animations
+- ✅ [GitHub Actions](https://github.com/features/actions) for continuous integration
+- 🏗️ [Netlify](https://www.netlify.com/) for deployment
 
 ## Quick Start
 
-```bash
-git clone https://github.com/rbardini/pokedex.git
+```console
+git clone git@github.com:rbardini/pokedex.git
 cd pokedex
 npm install
-npm start
+npm run dev
 ```
 
-Then open http://localhost:3000/ to see the app.
-
-Below is a list of commands you will probably find useful:
-
-- `npm start` runs the project in development mode.
-- `npm run build` builds the app for production to the `build` folder.
-- `npm run start:prod` runs the compiled app in production mode.
-- `npm test` runs the test watcher (Jest) in an interactive mode.
-- `npm start -- --inspect` starts the node server and enables the inspector agent.
-- `npm start -- --inspect-brk` starts the node server, enables the inspector agent and breaks before code starts.
-
-If the application is running and you need to manually restart the server, you do not need to completely kill and rebundle the application. Instead, you can just type `rs` and press enter in terminal.
-
-## License
-
-MIT
+Open [localhost:3000](http://localhost:3000) with your browser to see the result.
