@@ -7,7 +7,7 @@ type Props = {
 }
 
 const SearchField = ({ onChange, value }: Props) => {
-  const handleChange = useCallback(e => onChange(e.target.value), [])
+  const handleChange = useCallback(e => onChange(e.target.value), [onChange])
 
   return (
     <input
