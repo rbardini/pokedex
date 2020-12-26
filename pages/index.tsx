@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
-import { useState } from 'react'
+import { useRouter } from 'next/router'
+import { useCallback, useEffect, useState } from 'react'
 import Grid from '../components/grid'
 import SearchField from '../components/search-field'
 import { getPokemons } from '../lib/pokemons'
@@ -19,8 +20,22 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 }
 
 const Page = ({ pokemons }: Props) => {
+  const router = useRouter()
   const [search, setSearch] = useState('')
+  const onSearchChange = useCallback(
+    value => {
+      router.replace({ hash: value })
+      setSearch(value)
+    },
+    [router],
+  )
 
+  useEffect(() => {
+    const hash = router.asPath.match(/#(.+)/)?.[1] ?? ''
+    if (hash) setSearch(hash)
+  }, [router])
+
+  const title = [search, 'Pokédex'].filter(Boolean).join(' - ')
   const filteredPokemons = pokemons.filter(
     ({ formattedName }) =>
       !search || formattedName.toLowerCase().includes(search.toLowerCase()),
@@ -29,11 +44,11 @@ const Page = ({ pokemons }: Props) => {
   return (
     <div>
       <Head>
-        <title>Pokédex</title>
+        <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <SearchField onChange={setSearch} value={search} />
+      <SearchField onChange={onSearchChange} value={search} />
       <Grid pokemons={filteredPokemons} />
     </div>
   )
