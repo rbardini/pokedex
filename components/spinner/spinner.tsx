@@ -1,6 +1,11 @@
 import styles from './spinner.module.css'
 
-const Spinner = ({ width = 72, height = 72 }) => (
+type Props = {
+  width: number
+  height: number
+}
+
+const Spinner = ({ width = 72, height = 72 }: Props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 100 100"
