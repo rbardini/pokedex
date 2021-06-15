@@ -30,7 +30,6 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
 export const getStaticProps: GetStaticProps<Props, Params> = async ({
   params,
 }) => {
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const pokemon = await getPokemon(params!.id)
 
   return {

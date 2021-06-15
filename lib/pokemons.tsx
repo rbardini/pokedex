@@ -11,19 +11,17 @@ export const getPokemons = async () => {
     `https://pokeapi.co/api/v2/pokemon/?limit=${POKEMON_COUNT}`,
   )
 
-  return pokemons.map(
-    (pokemon, i): PokemonListItem => {
-      const id = i + 1
+  return pokemons.map((pokemon, i): PokemonListItem => {
+    const id = i + 1
 
-      return {
-        ...pokemon,
-        id,
-        // Workaround to add formatted name and sprite URL without making extra requests per Pokémon
-        formattedName: formatName(pokemon.name),
-        sprite: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`,
-      }
-    },
-  )
+    return {
+      ...pokemon,
+      id,
+      // Workaround to add formatted name and sprite URL without making extra requests per Pokémon
+      formattedName: formatName(pokemon.name),
+      sprite: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`,
+    }
+  })
 }
 
 export const getPokemon = async (id: string) => {
