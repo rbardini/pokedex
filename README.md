@@ -3,8 +3,7 @@
 [![Build status](https://img.shields.io/github/workflow/status/rbardini/pokedex/Main)](https://github.com/rbardini/pokedex/actions)
 [![Deploy status](https://img.shields.io/netlify/5b93c47b-d35a-43fc-ba21-71e5c997d726?label=deploy)](https://app.netlify.com/sites/next-pokedex/deploys)
 [![Code coverage](https://img.shields.io/codecov/c/github/rbardini/pokedex.svg)](https://codecov.io/gh/rbardini/pokedex)
-[![Dependencies status](https://img.shields.io/david/rbardini/pokedex.svg)](https://david-dm.org/rbardini/pokedex)
-[![devDependencies status](https://img.shields.io/david/dev/rbardini/pokedex.svg)](https://david-dm.org/rbardini/pokedex?type=dev)
+[![Dependencies status](https://img.shields.io/librariesio/github/rbardini/pokedex)](https://libraries.io/github/rbardini/pokedex)
 
 🎒 A server-rendered universal JavaScript application for Pokémon trainers.
 
