@@ -44,8 +44,11 @@ describe('<Grid />', () => {
             class="sprite"
             loading="lazy"
             src="1.png"
+            style="opacity: 1;"
           />
-          <span>
+          <span
+            style="opacity: 1;"
+          >
             Bulbasaur
           </span>
         </a>
@@ -58,8 +61,11 @@ describe('<Grid />', () => {
             class="sprite"
             loading="lazy"
             src="2.png"
+            style="opacity: 1;"
           />
-          <span>
+          <span
+            style="opacity: 1;"
+          >
             Charmander
           </span>
         </a>
@@ -72,8 +78,11 @@ describe('<Grid />', () => {
             class="sprite"
             loading="lazy"
             src="3.png"
+            style="opacity: 1;"
           />
-          <span>
+          <span
+            style="opacity: 1;"
+          >
             Squirtle
           </span>
         </a>
@@ -87,6 +96,7 @@ describe('<Grid />', () => {
     expect(container.firstChild).toMatchInlineSnapshot(`
       <div
         class="grid"
+        data-projection-id="1"
       >
         No Pokémon found
       </div>

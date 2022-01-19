@@ -13,7 +13,8 @@
     "downlevelIteration": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
