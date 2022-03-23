@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useCallback, useEffect, useState } from 'react'
+import Footer from '../components/footer'
 import Grid from '../components/grid'
 import SearchField from '../components/search-field'
 import { getPokemons } from '../lib/pokemons'
@@ -50,6 +51,8 @@ const Page = ({ pokemons }: Props) => {
 
       <SearchField onChange={onSearchChange} value={search} />
       <Grid pokemons={filteredPokemons} />
+
+      <Footer />
     </div>
   )
 }

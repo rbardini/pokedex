@@ -1,0 +1,15 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  padding-block: 2em;
+}
+
+.link {
+  text-decoration: underline #e0e0e0;
+  transition: text-decoration-color 0.2s;
+}
+
+.link:hover {
+  text-decoration-color: inherit;
+}

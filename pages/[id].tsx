@@ -3,6 +3,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import Figure from '../components/figure'
+import Footer from '../components/footer'
 import Header from '../components/header'
 import Moves from '../components/moves'
 import Profile from '../components/profile'
@@ -62,6 +63,8 @@ const Page = ({ pokemon }: Props) => (
         <Moves pokemon={pokemon} />
       </motion.div>
     </div>
+
+    <Footer />
   </div>
 )
 
