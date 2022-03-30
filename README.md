@@ -1,4 +1,4 @@
-# [Pokédex](https://next-pokedex.netlify.app/)
+# [Pokédex](https://pokedex.rbrd.in/)
 
 [![Build status](https://img.shields.io/github/workflow/status/rbardini/pokedex/Main)](https://github.com/rbardini/pokedex/actions)
 [![Deploy status](https://img.shields.io/netlify/5b93c47b-d35a-43fc-ba21-71e5c997d726?label=deploy)](https://app.netlify.com/sites/next-pokedex/deploys)

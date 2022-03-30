@@ -10,8 +10,20 @@
     "index",
     "pokeapi"
   ],
-  "homepage": "https://github.com/rbardini/pokedex",
-  "author": "Rafael Bardini",
+  "homepage": "https://pokedex.rbrd.in/",
+  "bugs": {
+    "url": "https://github.com/rbardini/pokedex/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rbardini/pokedex.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Rafael Bardini",
+    "email": "rafael@rbardini.com",
+    "url": "https://rbardini.com/"
+  },
   "scripts": {
     "build": "next build",
     "dev": "next dev",
