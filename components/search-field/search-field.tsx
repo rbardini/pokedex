@@ -3,7 +3,7 @@ import styles from './search-field.module.css'
 
 type Props = {
   onChange: (value: string) => void
-  value: string
+  value?: string
 }
 
 const SearchField = ({ onChange, value }: Props) => {

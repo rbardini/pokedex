@@ -1,42 +1,37 @@
-import { GetStaticProps } from 'next'
-import Head from 'next/head'
-import { useRouter } from 'next/router'
+'use client'
+
+import { useParams, useRouter } from 'next/navigation'
 import { useCallback, useEffect, useState } from 'react'
 import Footer from '../components/footer'
 import Grid from '../components/grid'
 import SearchField from '../components/search-field'
-import { getPokemons } from '../lib/pokemons'
 import { PokemonListItem } from '../types/pokemon'
 
 type Props = {
   pokemons: PokemonListItem[]
 }
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pokemons = await getPokemons()
-
-  return {
-    props: { pokemons },
-  }
-}
-
-const Page = ({ pokemons }: Props) => {
+const HomePage = ({ pokemons }: Props) => {
   const router = useRouter()
-  const [search, setSearch] = useState('')
+  const params = useParams()
+  const [search, setSearch] = useState<string>()
   const onSearchChange = useCallback(
     (value: string) => {
-      router.replace({ hash: value })
+      router.replace(`/#${value}`)
       setSearch(value)
     },
     [router],
   )
 
   useEffect(() => {
-    const hash = router.asPath.match(/#(.+)/)?.[1] ?? ''
-    if (hash) setSearch(hash)
-  }, [router])
+    if (search == null) {
+      const hash = window.location.hash.slice(1)
+      if (hash) setSearch(hash)
+    }
 
-  const title = [search, 'Pokédex'].filter(Boolean).join(' - ')
+    document.title = [search, 'Pokédex'].filter(Boolean).join(' - ')
+  }, [search, params])
+
   const filteredPokemons = pokemons.filter(
     ({ formattedName }) =>
       !search || formattedName.toLowerCase().includes(search.toLowerCase()),
@@ -44,11 +39,6 @@ const Page = ({ pokemons }: Props) => {
 
   return (
     <div>
-      <Head>
-        <title>{title}</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <SearchField onChange={onSearchChange} value={search} />
       <Grid pokemons={filteredPokemons} />
 
@@ -57,4 +47,4 @@ const Page = ({ pokemons }: Props) => {
   )
 }
 
-export default Page
+export default HomePage
