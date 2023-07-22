@@ -24,7 +24,7 @@ const Page = ({ pokemons }: Props) => {
   const router = useRouter()
   const [search, setSearch] = useState('')
   const onSearchChange = useCallback(
-    value => {
+    (value: string) => {
       router.replace({ hash: value })
       setSearch(value)
     },

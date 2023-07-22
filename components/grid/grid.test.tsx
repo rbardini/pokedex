@@ -96,7 +96,6 @@ describe('<Grid />', () => {
     expect(container.firstChild).toMatchInlineSnapshot(`
       <div
         class="grid"
-        data-projection-id="1"
       >
         No Pokémon found
       </div>

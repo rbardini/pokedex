@@ -45,8 +45,8 @@ const Page = ({ pokemon }: Props) => (
       <link rel="icon" href={pokemon.sprites.front_default} />
     </Head>
 
-    <Link href="/">
-      <a className={styles.back}>←</a>
+    <Link href="/" className={styles.back}>
+      ←
     </Link>
 
     <div className={styles.grid}>

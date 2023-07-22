@@ -9,19 +9,17 @@ type Props = {
 }
 
 const Cell = ({ pokemon }: Props) => (
-  <Link href={`/${pokemon.id}`}>
-    <a className={styles.cell}>
-      <motion.img
-        className={styles.sprite}
-        src={pokemon.sprite}
-        loading="lazy"
-        alt=""
-        layoutId={`pic-${pokemon.id}`}
-      />
-      <motion.span layoutId={`name-${pokemon.id}`}>
-        {pokemon.formattedName}
-      </motion.span>
-    </a>
+  <Link href={`/${pokemon.id}`} className={styles.cell}>
+    <motion.img
+      className={styles.sprite}
+      src={pokemon.sprite}
+      loading="lazy"
+      alt=""
+      layoutId={`pic-${pokemon.id}`}
+    />
+    <motion.span layoutId={`name-${pokemon.id}`}>
+      {pokemon.formattedName}
+    </motion.span>
   </Link>
 )
 

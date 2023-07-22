@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { ChangeEventHandler, useCallback } from 'react'
 import styles from './search-field.module.css'
 
 type Props = {
@@ -7,7 +7,10 @@ type Props = {
 }
 
 const SearchField = ({ onChange, value }: Props) => {
-  const handleChange = useCallback(e => onChange(e.target.value), [onChange])
+  const handleChange = useCallback<ChangeEventHandler<HTMLInputElement>>(
+    e => onChange(e.target.value),
+    [onChange],
+  )
 
   return (
     <input
