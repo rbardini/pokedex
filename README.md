@@ -1,6 +1,6 @@
 # [Pokédex](https://pokedex.rbrd.in/)
 
-[![Build status](https://img.shields.io/github/workflow/status/rbardini/pokedex/Main)](https://github.com/rbardini/pokedex/actions)
+[![Build status](https://img.shields.io/github/actions/workflow/status/rbardini/pokedex/main.yml)](https://github.com/rbardini/pokedex/actions)
 [![Deploy status](https://img.shields.io/netlify/5b93c47b-d35a-43fc-ba21-71e5c997d726?label=deploy)](https://app.netlify.com/sites/next-pokedex/deploys)
 [![Code coverage](https://img.shields.io/codecov/c/github/rbardini/pokedex.svg)](https://codecov.io/gh/rbardini/pokedex)
 [![Dependencies status](https://img.shields.io/librariesio/github/rbardini/pokedex)](https://libraries.io/github/rbardini/pokedex)
@@ -13,7 +13,6 @@ Powered by [Next.js](https://nextjs.org/) and [PokéAPI](https://pokeapi.co/).
 
 - ⚛️ [React](https://reactjs.org/) for UI building
 - 🤖 [TypeScript](https://www.typescriptlang.org/) for type-checking
-- ⚠️ [ESLint](https://eslint.org/) for linting
 - 💄 [Prettier](https://prettier.io/) for formatting
 - 🐶 [Husky](https://typicode.github.io/husky) and [lint-staged](https://github.com/okonet/lint-staged) for commit hooks
 - 🧪 [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/react) for testing

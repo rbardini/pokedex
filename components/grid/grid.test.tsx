@@ -44,11 +44,8 @@ describe('<Grid />', () => {
             class="sprite"
             loading="lazy"
             src="1.png"
-            style="opacity: 1;"
           />
-          <span
-            style="opacity: 1;"
-          >
+          <span>
             Bulbasaur
           </span>
         </a>
@@ -61,11 +58,8 @@ describe('<Grid />', () => {
             class="sprite"
             loading="lazy"
             src="2.png"
-            style="opacity: 1;"
           />
-          <span
-            style="opacity: 1;"
-          >
+          <span>
             Charmander
           </span>
         </a>
@@ -78,11 +72,8 @@ describe('<Grid />', () => {
             class="sprite"
             loading="lazy"
             src="3.png"
-            style="opacity: 1;"
           />
-          <span
-            style="opacity: 1;"
-          >
+          <span>
             Squirtle
           </span>
         </a>
