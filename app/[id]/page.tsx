@@ -7,12 +7,11 @@ type Params = {
 }
 
 type Props = {
-  params: Params
+  params: Promise<Params>
 }
 
-export const generateMetadata = async ({
-  params,
-}: Props): Promise<Metadata> => {
+export const generateMetadata = async (props: Props): Promise<Metadata> => {
+  const params = await props.params
   const pokemon = await getPokemon(params.id)
 
   return {
@@ -26,7 +25,8 @@ export const generateStaticParams = async () => {
   return ids.map(id => ({ id }))
 }
 
-const Page = async ({ params }: Props) => {
+const Page = async (props: Props) => {
+  const params = await props.params
   const pokemon = await getPokemon(params.id)
   return <PokemonPage pokemon={pokemon} />
 }

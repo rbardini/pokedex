@@ -26,6 +26,7 @@ const HomePage = ({ pokemons }: Props) => {
   useEffect(() => {
     if (search == null) {
       const hash = window.location.hash.slice(1)
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (hash) setSearch(hash)
     }
 
