@@ -10,6 +10,9 @@ type Props = {
 
 const Cell = ({ pokemon }: Props) => (
   <Link href={`/${pokemon.id}`} className={styles.cell}>
+    <motion.span className={styles.number} layoutId={`number-${pokemon.id}`}>
+      #{pokemon.id}
+    </motion.span>
     <motion.img
       className={styles.sprite}
       src={pokemon.sprite}

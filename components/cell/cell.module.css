@@ -1,11 +1,13 @@
 .cell {
   align-items: center;
+  box-sizing: border-box;
   display: flex;
   flex: 0 0 10em;
   flex-direction: column;
   height: 10em;
   justify-content: center;
   margin: 2px;
+  padding-inline: 1em;
   transition: all 0.2s;
 }
 
@@ -14,6 +16,12 @@
     1em 1em 2em #d0d0d0,
     -1em -1em 2em #fff;
   transform: scale(1.2);
+}
+
+.number {
+  align-self: start;
+  color: #9e9e9e;
+  font-size: 0.8em;
 }
 
 .sprite {
