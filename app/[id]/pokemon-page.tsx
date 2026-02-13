@@ -21,9 +21,11 @@ const PokemonPage = ({ pokemon }: Props) => (
     </Link>
 
     <div className={styles.grid}>
-      <motion.span className={styles.number} layoutId={`number-${pokemon.id}`}>
-        #{pokemon.id}
-      </motion.span>
+      <div>
+        <motion.div className={styles.number} layoutId={`number-${pokemon.id}`}>
+          #{pokemon.id}
+        </motion.div>
+      </div>
       <Header className={styles.header} pokemon={pokemon} />
       <Figure className={styles.figure} pokemon={pokemon} />
       <motion.div
