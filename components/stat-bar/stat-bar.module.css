@@ -1,6 +1,8 @@
 .statBar {
+  align-self: center;
   appearance: none;
   border: none;
+  font-size: 0.8em;
   width: 100%;
 }
 
