@@ -1,12 +1,11 @@
 .cell {
   align-items: center;
+  aspect-ratio: 1;
   box-sizing: border-box;
   display: flex;
-  flex: 0 0 10em;
+  flex: 10em;
   flex-direction: column;
-  height: 10em;
   justify-content: center;
-  margin: 2px;
   padding-inline: 1em;
   transition: all 0.2s;
 }
@@ -15,7 +14,7 @@
   box-shadow:
     1em 1em 2em #d0d0d0,
     -1em -1em 2em #fff;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .number {
