@@ -22,7 +22,10 @@ const Figure = ({ className, pokemon }: Props) => (
       {pokemon.types.map(({ type }) => (
         <Tag
           key={type.name}
-          style={{ backgroundColor: getTypeColor(type.name), color: '#fff' }}
+          style={{
+            backgroundColor: getTypeColor(type.name),
+            color: 'var(--accent-foreground)',
+          }}
         >
           {type.name}
         </Tag>

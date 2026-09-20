@@ -13,11 +13,14 @@ const Spinner = ({ width = 72, height = 72 }: Props) => (
     width={width}
     height={height}
   >
-    <path stroke="#000" d="M30 50a1 1 1 0 1 40 0H57.5a1 1 1 0 0-15 0z" />
-    <circle cx="50" cy="50" r="5" stroke="#000" />
+    <path
+      stroke="currentColor"
+      d="M30 50a1 1 1 0 1 40 0H57.5a1 1 1 0 0-15 0z"
+    />
+    <circle cx="50" cy="50" r="5" stroke="currentColor" />
     <path
       fill="#fff"
-      stroke="#000"
+      stroke="currentColor"
       d="M30 50a1 1 1 0 0 40 0H57.5a1 1 1 0 1-15 0z"
     />
   </svg>

@@ -12,14 +12,14 @@
 
 .cell:hover {
   box-shadow:
-    1em 1em 2em #d0d0d0,
-    -1em -1em 2em #fff;
+    1em 1em 2em var(--shadow-shade),
+    -1em -1em 2em var(--shadow-highlight);
   transform: scale(1.1);
 }
 
 .number {
   align-self: start;
-  color: #9e9e9e;
+  color: var(--foreground-muted);
   font-size: 0.8em;
 }
 

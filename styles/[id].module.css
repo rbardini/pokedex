@@ -14,7 +14,7 @@
 }
 
 .number {
-  color: #9e9e9e;
+  color: var(--foreground-muted);
   font-size: 4em;
   font-weight: normal;
   grid-area: number;

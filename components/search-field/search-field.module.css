@@ -2,9 +2,14 @@
   background: transparent;
   border: 0;
   border-bottom: 1px solid;
+  color: inherit;
   font-size: 3em;
   padding: 0.2em 0;
   width: 100%;
+}
+
+.searchField::placeholder {
+  color: var(--foreground-muted);
 }
 
 .searchField:focus {

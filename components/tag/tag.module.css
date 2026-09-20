@@ -1,5 +1,5 @@
 .tag {
-  background: #e0e0e0;
+  background: var(--surface);
   display: inline-block;
   font-size: 0.8em;
   margin: 2px;

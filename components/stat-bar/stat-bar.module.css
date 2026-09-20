@@ -7,9 +7,9 @@
 }
 
 .statBar::-webkit-progress-bar {
-  background-color: #e0e0e0;
+  background-color: var(--surface);
 }
 
 .statBar::-webkit-progress-value {
-  background-color: #212121;
+  background-color: var(--foreground);
 }
